@@ -23,4 +23,5 @@ This is a translation plugin developed using the ChatGPT API, which can automati
 6. 在頁面中，點擊上方的「載入解壓縮」並找到先前解壓縮的ChatGPT-Translator檔案夾，選擇該檔案夾。
 7. 現在，您可以開始使用ChatGPT-Translator插件了。在需要翻譯的文字上，點擊插件圖示並貼上來進行翻譯。
 # 作者
-我與ChatGPT Copilot
+我與ChatGPT Copilot<br>
+<a href="https://www.flaticon.com/free-icons/translation" title="translation icons">Translation icons created by Freepik - Flaticon</a>
