@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ChatGPT Translator</title>
+    <script src="popup.js"></script>
+    <script src="language-data.js"></script>
+</head>
+<body>
+    <h1>ChatGPT Translator</h1>
+    <form>
+        <label for="text-to-translate">Text to Translate:</label>
+        <textarea id="text-to-translate" name="text-to-translate" rows="5" cols="50"></textarea>
+        <br>
+        <label for="target-language">Target Language:</label>
+        <select id="target-language"></select>
+        <br>
+        <label for="target-model">Model:</label>
+        <select id="target-model">
+            <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+            <option value="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301</option>>
+        </select>
+        <br>
+        <label for="api-key">OpenAI API Key:</label>
+        <input type="password" id="api-key" name="api-key">
+        <a href="https://platform.openai.com/account/api-keys" target="_blank">Create your API here</a>
+        <br>
+        <label for="remember-api-key">Remember API Key:</label>
+        <input type="checkbox" id="remember-api-key" name="remember-api-key">
+        <br>
+        <button id="translate-button" type="button">Translate</button>
+    </form>
+    <label for="translation-result">Translation Result:</label>
+    <textarea id="translation-result" name="translation-result" rows="5" cols="50" disabled></textarea>
+    <a href="https://www.flaticon.com/free-icons/translation" title="translation icons">Translation icons created by Freepik - Flaticon</a>
+</body>
+</html>

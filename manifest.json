@@ -1,0 +1,23 @@
+{
+    "name": "ChatGPT Translator",
+    "version": "1.0",
+    "description": "A Chrome extension for translating web pages",
+    "manifest_version": 3,
+    "icons": {
+      "16": "translation.png",
+      "48": "translation.png",
+      "128": "translation.png"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "host_permissions": [
+      "https://api.openai.com/*"
+    ],
+    "action": {
+      "default_icon": "translation.png",
+      "default_title": "ChatGPT Translator",
+      "default_popup": "popup.html"
+    }
+  }
+  
