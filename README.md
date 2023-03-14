@@ -4,8 +4,8 @@ This is a translation plugin developed using the ChatGPT API, which can automati
 # 使用情境
 <img width="500" height="500" src="https://user-images.githubusercontent.com/44409920/223719348-91f52c88-a548-4377-b9ec-e08ed807ba47.png"></img>
 # 安裝方法
-版本v1.0已上架於Chrome應用程式商店 : [ChatGPT-Translator v1.0](https://chrome.google.com/webstore/detail/chatgpt-translator/pbdekcaeombkcnkaildbphbiaainlaba?hl=zh-TW&authuser=0)<br>
-目前v1.1等待Google Chrome應用程式商店審核中，暫時需手動下載並解壓縮後才可使用套件
+1. 版本v1.1已上架於Chrome應用程式商店 : [ChatGPT-Translator v1.1](https://chrome.google.com/webstore/detail/chatgpt-translator/pbdekcaeombkcnkaildbphbiaainlaba?hl=zh-TW&authuser=0)<br>
+2. 也可手動下載並解壓縮後才可使用套件
 ## Chrome瀏覽器
 1. 在「Release」頁面上，找到最新版本的ChatGPT-Translator，並點擊下載按鈕。
 2. 等待檔案下載完成後，您可以在電腦上找到ChatGPT-Translator.zip檔案。
