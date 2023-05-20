@@ -9,6 +9,7 @@
       "128": "translation.png"
     },
     "permissions": [
+      "activeTab",
       "storage"
     ],
     "host_permissions": [
