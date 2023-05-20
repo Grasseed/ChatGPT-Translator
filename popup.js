@@ -6,6 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var apiKeyInput = document.getElementById('api-key');
     var rememberApiKey = document.getElementById('remember-api-key');
     var targetmodel = document.getElementById('target-model');
+    var createAPIKey = document.getElementById("createAPIKey");
+    var apiSource = document.querySelector('input[name="api-source"]:checked').value;
+    if (apiSource === "openai") {
+        createAPIKey.href = "https://platform.openai.com/account/api-keys";
+    } else {
+    createAPIKey.href = "https://github.com/PawanOsman/ChatGPT";
+    }
 
     const select = document.getElementById('target-language');
     languageData.forEach((lang) => {
