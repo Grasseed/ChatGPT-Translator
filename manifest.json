@@ -1,23 +1,52 @@
 {
-    "name": "ChatGPT Translator",
-    "version": "1.1",
-    "description": "A Chrome extension for translating web pages",
-    "manifest_version": 3,
-    "icons": {
-      "16": "translation.png",
-      "48": "translation.png",
-      "128": "translation.png"
-    },
-    "permissions": [
-      "storage"
-    ],
-    "host_permissions": [
-      "https://api.openai.com/*"
-    ],
-    "action": {
-      "default_icon": "translation.png",
-      "default_title": "ChatGPT Translator",
-      "default_popup": "popup.html"
+  "name": "ChatGPT Translator",
+  "version": "2.0",
+  "description": "沉浸式 AI 翻譯 — 支援 OpenAI、Ollama、LM Studio 等",
+  "manifest_version": 3,
+  "icons": {
+    "16": "translation.png",
+    "48": "translation.png",
+    "128": "translation.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "http://localhost:*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "language-data.js",
+        "utils/storage.js",
+        "utils/cache.js",
+        "utils/content-detector.js",
+        "content.js"
+      ]
     }
-  }
-  
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_icon": "translation.png",
+    "default_title": "ChatGPT Translator"
+  },
+  "commands": {
+    "translate-page": {
+      "suggested_key": { "default": "Alt+T" },
+      "description": "翻譯整頁"
+    },
+    "translate-selection": {
+      "suggested_key": { "default": "Alt+Q" },
+      "description": "翻譯選取文字"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

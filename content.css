@@ -1,0 +1,208 @@
+/* content.css — Shadow DOM 內部樣式 (Vercel Design System) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:host {
+  all: initial;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #171717;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === 懸浮球 === */
+.translator-fab {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #171717;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 2147483647;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  border: none;
+  outline: none;
+}
+.translator-fab:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.translator-fab.translating { background: #0072f5; box-shadow: 0 4px 12px rgba(0,114,245,0.3); animation: pulse 1.5s infinite; }
+.translator-fab.done { background: #17a34a; box-shadow: 0 4px 12px rgba(23,163,74,0.3); }
+.translator-fab.error { background: #ef4444; box-shadow: 0 4px 12px rgba(239,68,68,0.3); }
+
+/* === 懸浮球展開選單 === */
+.translator-menu {
+  position: fixed;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px, 0 8px 30px rgba(0,0,0,0.12);
+  padding: 8px;
+  width: 220px;
+  z-index: 2147483647;
+  animation: slideUp 0.15s ease;
+}
+.translator-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #171717;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+.translator-menu-item:hover { background: #f5f5f5; }
+.translator-menu-item .icon { font-size: 16px; width: 20px; text-align: center; flex-shrink: 0; }
+.translator-menu-divider { height: 1px; background: #f0f0f0; margin: 4px 8px; }
+.translator-menu-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 4px;
+  font-size: 11px;
+  color: #999;
+}
+
+/* === Badges === */
+.badge-lang {
+  background: #ebf5ff;
+  color: #0068d6;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.badge-model {
+  background: #f5f5f5;
+  color: #666;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'SF Mono', ui-monospace, monospace;
+}
+
+/* === 劃詞冒泡按鈕 === */
+.translator-selection-btn {
+  position: fixed;
+  background: #171717;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  z-index: 2147483647;
+  border: none;
+  animation: fadeIn 0.15s ease;
+  font-family: inherit;
+}
+.translator-selection-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 24px;
+  width: 10px;
+  height: 10px;
+  background: #171717;
+  transform: rotate(45deg);
+}
+
+/* === 翻譯結果卡片 === */
+.translator-result-card {
+  position: fixed;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px, 0 8px 30px rgba(0,0,0,0.12);
+  padding: 16px;
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 2147483647;
+  animation: slideUp 0.15s ease;
+  font-family: inherit;
+}
+.translator-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.translator-result-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #0072f5;
+}
+.translator-result-close {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #666;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+}
+.translator-result-close:hover { background: #e8e8e8; }
+.translator-result-body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #171717;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+.translator-result-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.translator-result-meta {
+  font-size: 10px;
+  color: #999;
+  font-family: 'SF Mono', ui-monospace, monospace;
+}
+.translator-copy-btn {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #666;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.translator-copy-btn:hover { background: #e8e8e8; }
+
+/* === 動畫 === */
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+/* === 隱藏 === */
+.hidden { display: none !important; }
