@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Translator 設定</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <div class="page-header">
+      <h1>ChatGPT Translator</h1>
+      <p>設定翻譯供應商、模型偏好和顯示選項</p>
+    </div>
+
+    <!-- API 供應商 -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2>API 供應商</h2>
+        <button class="btn btn-secondary btn-sm" id="btn-add-provider">+ 新增供應商</button>
+      </div>
+      <div class="card" id="provider-list"></div>
+      <div class="card hidden" id="provider-form-card">
+        <div class="provider-form" id="provider-form"></div>
+      </div>
+    </section>
+
+    <!-- 翻譯模型 -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2>翻譯模型</h2>
+        <button class="btn-link" id="btn-refresh-models">🔄 重新整理模型列表</button>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row">
+            <label class="form-label">供應商</label>
+            <div id="provider-select"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">選擇模型 <span class="form-hint-inline">— 從 /v1/models 自動取得</span></label>
+            <div class="model-grid" id="model-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 翻譯偏好 -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2>翻譯偏好</h2>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-row">
+            <label class="form-label">目標語言</label>
+            <div id="language-select"></div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">預設翻譯模式</label>
+            <div id="mode-select"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 顯示設定 -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2>顯示設定</h2>
+      </div>
+      <div class="card">
+        <div class="card-body" id="display-settings"></div>
+      </div>
+    </section>
+
+    <!-- 快捷鍵 -->
+    <section class="settings-section">
+      <div class="section-header">
+        <h2>快捷鍵</h2>
+      </div>
+      <div class="card">
+        <div class="card-body" id="shortcuts-display"></div>
+      </div>
+    </section>
+
+    <div class="page-footer">
+      <span>ChatGPT Translator v2.0</span>
+      <button class="btn btn-ghost btn-sm" id="btn-clear-cache">清除翻譯快取</button>
+    </div>
+  </div>
+
+  <script src="language-data.js"></script>
+  <script src="utils/storage.js"></script>
+  <script src="components/dropdown.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
